@@ -1,9 +1,11 @@
 body {
   background-color: #efeee7;
-  font-family: "Georgia", "Times New Roman", Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   color: #333333;
   margin: 0;
   padding: 0;
+  line-height: 150%;
+  font-size: 18px;
 }
 
 header {
@@ -14,8 +16,9 @@ h1 {
   color: #eee;
   font-size: 28px;
   text-align: center;
-  padding: 20px;
-  margin-top: 0;
+  padding: 20px 0;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -25,9 +28,12 @@ h2 {
 .container {
   margin: 0 auto;
   padding: 0 50px;
+  width: 1024px;
 }
 
-#main-bio, #contact-info, #bio-image {
+#main-bio,
+#contact-info,
+#bio-image {
   float: left;
 }
 
@@ -42,7 +48,6 @@ h2 {
 
 #contact-info {
   width: 30%;
-  line-height: 1.5;
 }
 
 a {
