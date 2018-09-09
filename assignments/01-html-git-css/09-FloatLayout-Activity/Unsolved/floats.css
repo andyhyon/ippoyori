@@ -49,7 +49,7 @@ section {
 
 #full {
   background-color: #eee;
-  clear: both;
+  clear: both; /*re-establish document flow*/
   overflow: auto;
   width: 100%;
 }
@@ -60,7 +60,7 @@ section {
   margin-top: 20px;
 }
 
-aside {
+aside { /*content flowing around it like a newspaper*/
   float: left;
   width: 33%;
   height: 200px;
