@@ -1,0 +1,56 @@
+/**
+  * 11-CSS_Positioned_Activity
+**/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 525px;
+  line-height: 28px;
+  margin: auto;
+  margin-top: 75px;
+}
+
+header {
+  font-size: 36px;
+}
+
+p {
+  font-size: 18px;
+}
+
+div {
+  text-align: center;
+  font-size: 24px;
+}
+
+#relative,
+#fixed {
+  background-color: #eee;
+}
+
+#fixed {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  padding: 40px;
+}
+
+#relative {
+  position: relative;
+  padding-top: 30px;
+  height: 200px;
+}
+
+#absolute {
+  position: absolute;
+  background-color: #999;
+  bottom: 0;
+  right: -20px;
+  padding: 20px 40px;
+
+}
+
+/* i left my heart here with you  */
