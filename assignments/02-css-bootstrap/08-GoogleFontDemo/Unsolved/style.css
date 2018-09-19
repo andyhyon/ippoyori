@@ -5,10 +5,20 @@
 /* Add in the Google Fonts of your choice */
 @import url('https://fonts.googleapis.com/css?family=Kosugi+Maru|Montserrat');
 
+@font-face {
+  font-family: "Nunito_Sans";
+  src: url(./Nunito_Sans/NunitoSans-Regular.ttf) format("truetype");
+}
+
 .thought1 {
   font-family: 'Montserrat', sans-serif;
 }
 
 .thought2 {
   font-family: 'Kosugi Maru', sans-serif;
+}
+
+.thought3 {
+  font-family: 'Nunito_Sans';
+  font-size: 40px;
 }
