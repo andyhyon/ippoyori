@@ -5,6 +5,7 @@ a {
   width: 400px;
   height: 200px;
   margin-top: 40px;
+  margin-bottom: 40px;
   line-height: 200px;
   border-radius: 20px;
   font-size: 20px;
@@ -18,4 +19,32 @@ a {
 a:hover {
   background-color: #dbdbdb;
   color: #000000;
+}
+
+a:focus {
+  background-color: #000000;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: solid 2px #000000;
+  height: 100px;
+  width: 300px;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+input:hover {
+  background-color: #000000;
+}
+
+input:focus {
+  background-color: #dbdbdb;
+}
+
+a:visited {
+  background-color: red;
 }
