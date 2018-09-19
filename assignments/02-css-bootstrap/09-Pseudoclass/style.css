@@ -1,0 +1,21 @@
+a {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: 400px;
+  height: 200px;
+  margin-top: 40px;
+  line-height: 200px;
+  border-radius: 20px;
+  font-size: 20px;
+  background-color: #828282;
+  font-family: 'Helvetica', sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+a:hover {
+  background-color: #dbdbdb;
+  color: #000000;
+}
