@@ -3,3 +3,12 @@
  **/
 
 /* Add in the Google Fonts of your choice */
+@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru|Montserrat');
+
+.thought1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.thought2 {
+  font-family: 'Kosugi Maru', sans-serif;
+}
