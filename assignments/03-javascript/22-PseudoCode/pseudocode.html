@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <title>Pseudocode for Rock Paper Scissor Game</title>
+    <style>
+      p {
+        font-size: 30px;
+      }
+    </style>
   </head>
   <body>
     <p>You chose: <span id="user-choice"></span></p>
@@ -12,32 +17,42 @@
     <p>ties: <span id="tie-score"></span></p>
 
     <script type="text/javascript">
-      var compChoice;
-      var userChoice = document.getElementById("user-choice");
+      var compChoiceArray = ["r", "p", "s"];
 
-      // This function grabs the user's choice when onkeyup event fires
-      document.onkeyup = function(event) {
-        userChoice.textContent = event.key;
-      };
+      // Randomly chooses a choice from compChoiceArray
+      var compChoice = compChoiceArray[Math.floor(Math.random() * compChoiceArray.length)];
+
+      var userChoice = event.key;
 
       var userScore = 0;
       var compScore = 0;
       var tieScore = 0;
 
-      // Conditional for when the user wins a point
-      if
-        ((compChoice == "r" && userChoice == "p") || (compChoice == "s" && userChoice == "r") || (compChoice == "p" && userChoice == "s")) {
-          userScore++;
-        }
-      // Conditional for when the computer wins a point
-      else if
-        ((compChoice == "r" && userChoice == "s") || (compChoice == "s" && userChoice == "p") || (compChoice == "p" && userChoice == "r")) {
-          compScore++;
-        }
-      // Conditional for when the game results in a tie
-      else if (compChoice == userChoice) {
-        tieScore++;
+      if (userChoice === "r" || userChoice === "s" || userChoice === "p") {
+
       }
+      // This function grabs the user's choice when onkeyup event fires
+
+
+
+
+
+
+
+      // Conditional for when the user wins a point
+      // if
+      //   ((compChoice == "r" && userChoice == "p") || (compChoice == "s" && userChoice == "r") || (compChoice == "p" && userChoice == "s")) {
+      //     userScore++;
+      //   }
+      // // Conditional for when the computer wins a point
+      // else if
+      //   ((compChoice == "r" && userChoice == "s") || (compChoice == "s" && userChoice == "p") || (compChoice == "p" && userChoice == "r")) {
+      //     compScore++;
+      //   }
+      // // Conditional for when the game results in a tie
+      // else if (compChoice == userChoice) {
+      //   tieScore++;
+      // }
     </script>
 
   </body>
