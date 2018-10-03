@@ -17,20 +17,36 @@
     <p>ties: <span id="tie-score"></span></p>
 
     <script type="text/javascript">
+      // Limits random option by computer to just r, p, and s
       var compChoiceArray = ["r", "p", "s"];
 
-      // Randomly chooses a choice from compChoiceArray
-      var compChoice = compChoiceArray[Math.floor(Math.random() * compChoiceArray.length)];
+      // This function runs anytime the user presses a key
+      document.onkeyup = function (event) {
 
-      var userChoice = event.key;
+        // Randomly chooses a choice from compChoiceArray
+        var compChoice = compChoiceArray[Math.floor(Math.random() * compChoiceArray.length)];
 
-      var userScore = 0;
-      var compScore = 0;
-      var tieScore = 0;
+        // Assigns the struck key to variable userChoice
+        var userChoice = event.key;
 
-      if (userChoice === "r" || userChoice === "s" || userChoice === "p") {
-
+        // Test console.log to see if userChoice is properly represented
+        console.log(userChoice);
+        // Test console.log to see if compChoice is assigned with every onkeyup event
+        console.log(compChoice);
       }
+
+
+
+
+
+      // var userScore = 0;
+      // var compScore = 0;
+      // var tieScore = 0;
+
+      // Conditional to return all other observable behavior on-screen only with the correct input
+      // if (userChoice === "r" || userChoice === "s" || userChoice === "p") {
+
+      // }
       // This function grabs the user's choice when onkeyup event fires
 
 
