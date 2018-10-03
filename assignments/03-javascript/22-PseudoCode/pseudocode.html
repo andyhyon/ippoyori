@@ -10,15 +10,20 @@
     </style>
   </head>
   <body>
-    <p>You chose: <span id="user-choice"></span></p>
-    <p>The computer chose: <span id="comp-choice"></span></p>
-    <p>wins: <span id="user-score"></span></p>
-    <p>losses: <span id="comp-score"></span></p>
-    <p>ties: <span id="tie-score"></span></p>
+    <p>press r, p, or s to start the game</p>
+    <p id="user-choice"></p>
+    <p id="comp-choice"></p>
+    <p id="user-score"></p>
+    <p id="comp-score"></p>
+    <p id="tie-score"></p>
 
     <script type="text/javascript">
       // Limits random option by computer to just r, p, and s
       var compChoiceArray = ["r", "p", "s"];
+
+      var userScore = 0;
+      var compScore = 0;
+      var tieScore = 0;
 
       // This function runs anytime the user presses a key
       document.onkeyup = function (event) {
@@ -29,46 +34,40 @@
         // Assigns the struck key to variable userChoice
         var userChoice = event.key;
 
-        // Test console.log to see if userChoice is properly represented
-        console.log(userChoice);
-        // Test console.log to see if compChoice is assigned with every onkeyup event
-        console.log(compChoice);
-      }
+        var userChoiceElement = document.getElementById("user-choice");
+        var compChoiceElement = document.getElementById("comp-choice");
+        var userScoreElement = document.getElementById("user-score");
+        var compScoreElement = document.getElementById("comp-score");
+        var tieScoreElement = document.getElementById("tie-score");
 
+        // Condition to trigger only on valid input of r, p, or s;
+        if (userChoice == "r" || userChoice == "s" || userChoice == "p") {
 
+        // Conditional for when the user wins a point
+          if
+            ((compChoice == "r" && userChoice == "p") || (compChoice == "s" && userChoice == "r") || (compChoice == "p" && userChoice == "s")) {
+              userScore = userScore + 1;
+            }
+          // Conditional for when the computer wins a point
+          else if
+            ((compChoice == "r" && userChoice == "s") || (compChoice == "s" && userChoice == "p") || (compChoice == "p" && userChoice == "r")) {
+              compScore = compScore + 1;
+            }
+          // Conditional for when the game results in a tie
+          else if (compChoice == userChoice) {
+            tieScore = tieScore + 1;
+          }
 
+          userChoiceElement.textContent = "You chose: " + userChoice;
+          compChoiceElement.textContent = "The computer chose: " + compChoice;
+          userScoreElement.textContent = "wins: " + userScore;
+          compScoreElement.textContent = "losses: " + compScore;
+          tieScoreElement.textContent = "ties: " + tieScore;
+        } else {
+            return;
+        }
 
-
-      // var userScore = 0;
-      // var compScore = 0;
-      // var tieScore = 0;
-
-      // Conditional to return all other observable behavior on-screen only with the correct input
-      // if (userChoice === "r" || userChoice === "s" || userChoice === "p") {
-
-      // }
-      // This function grabs the user's choice when onkeyup event fires
-
-
-
-
-
-
-
-      // Conditional for when the user wins a point
-      // if
-      //   ((compChoice == "r" && userChoice == "p") || (compChoice == "s" && userChoice == "r") || (compChoice == "p" && userChoice == "s")) {
-      //     userScore++;
-      //   }
-      // // Conditional for when the computer wins a point
-      // else if
-      //   ((compChoice == "r" && userChoice == "s") || (compChoice == "s" && userChoice == "p") || (compChoice == "p" && userChoice == "r")) {
-      //     compScore++;
-      //   }
-      // // Conditional for when the game results in a tie
-      // else if (compChoice == userChoice) {
-      //   tieScore++;
-      // }
+      };
     </script>
 
   </body>
