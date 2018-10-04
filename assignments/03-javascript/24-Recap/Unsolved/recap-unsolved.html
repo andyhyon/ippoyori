@@ -23,18 +23,26 @@
 
 
       // How do we print out every single student in Row 1?
-
+      // for (x = 0; x < studentsRow1.length; x++) {
+      //   console.log(studentsRow1[x]);
+      // }
 
       // How do we print out every student in Row 2 whose first name begins with J?
-
+      for (x = 0; x < studentsRow2.length; x++) {
+        if (studentsRow2[x].charAt(0) === "J") {
+          console.log(studentsRow2[x]);
+        } else {
+          continue;
+        }
+      }
 
       // Using the RCBclass array, how do we access the second student in row 3?
-
+      console.log(entireClass[2][1]);
 
       // Using the RCBclass array, how do we access the third student in row 2?
-
+      console.log(entireClass[1][2]);
 
     </script>
-    
+
   </body>
 </html>
