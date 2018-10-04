@@ -8,24 +8,26 @@
 
     <script type="text/javascript">
 
-      // ????
+      // Declaring variables where favTVshows is an empty array and tvShow is just an empty variable
       var favTVshows = [];
       var tvShow;
 
-      // For Loop Elements Repeats ??? Times
+      // For Loop Elements Repeats 3 Times
       for (var i = 1; i < 4; i++) {
 
-        // ????
+        // Prompts the user to enter the title of their favorite TV show while assiging it to var tvShow
+        // Also changes the rank of the TV show based on the position of the loop
         tvShow = prompt("What's your #" + i + " favorite TV show?");
 
-        // ????
+        // This one is new but it pushes the current value for var tvShow to the array favTVshows
         favTVshows.push(tvShow);
       }
 
-      // ????
+      // This is a second for-loop that runs through the length of the array favTVshows
+      // This will also run three times
       for (var j = 0; j < favTVshows.length; j++) {
 
-        // ???
+        // Prompts the user of each index within the array
         alert(favTVshows[j]);
       }
 
