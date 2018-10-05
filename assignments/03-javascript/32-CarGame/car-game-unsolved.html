@@ -5,6 +5,9 @@
     <title>Car Game Object</title>
   </head>
   <body>
+    <h1>Car Adventures!</h1>
+    <h2>Type "h" to honk, "d" to drive to work, "w" to drive around the world, or "t" to get a tuneup.</h2>
+    <h3>See console for car stats.</h3>
 
     <script>
 
@@ -79,23 +82,23 @@
         var userKey = event.key;
 
         if (userKey === "h") {
-          console.log(car.honk());
-          console.log(displayCar());
+          car.honk();
+          displayCar();
         }
 
         if (userKey === "d") {
-          console.log(car.driveToWork());
-          console.log(displayCar());
+          car.driveToWork();
+          displayCar();
         }
 
         if (userKey === "w") {
-          console.log(car.driveAroundWorld());
-          console.log(displayCar());
+          car.driveAroundWorld();
+          displayCar();
         }
 
         if (userKey === "t") {
-          console.log(car.getTuneUp());
-          console.log(displayCar());
+          car.getTuneUp();
+          displayCar();
         }
       }
 
