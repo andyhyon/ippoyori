@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Car Game Object</title>
+  </head>
+  <body>
+
+    <script>
+
+      var car = {
+        make: "Honda",
+        model: "Fit",
+        color: "Blue Raspberry",
+        mileage: 3000,
+        isWorking: true,
+
+        driveToWork: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 8;
+
+          alert("New Mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 24000;
+
+          alert("New Mileage: " + this.mileage);
+          alert("Car needs a tuneup!");
+
+          this.isWorking = false;
+        },
+
+        getTuneUp: function() {
+          alert("Car is ready to go!");
+          this.isWorking = true;
+        },
+
+        honk: function() {
+          alert("Honk! Honk!");
+        }
+      };
+
+      // Array of properties in object car
+      // Created array to try and for-loop the the properties I wanted to console.log for every onkeyup event
+      // var carProperties = [
+      //   "make",
+      //   "model",
+      //   "color",
+      //   "mileage",
+      //   "isWorking"
+      // ]
+
+      // Function of a for-loop I was going to use to display the properties and values for each onkeyup event
+      // function displayCar() {
+      //   for (i = 0; i < 5; i++) {
+      //     console.log(car[i]);
+      //   }
+      //   console.log("-------------------------");
+      // }
+
+      function displayCar() {
+        console.log("Make: " + car.make);
+        console.log("Model: " + car.model);
+        console.log("Color: " + car.color);
+        console.log("Mileage: " + car.mileage);
+        console.log("Is Working: " + car.isWorking);
+        console.log("-----------------------------");
+      }
+
+
+
+      document.onkeyup = function(event) {
+        var userKey = event.key;
+
+        if (userKey === "h") {
+          console.log(car.honk());
+          console.log(displayCar());
+        }
+
+        if (userKey === "d") {
+          console.log(car.driveToWork());
+          console.log(displayCar());
+        }
+
+        if (userKey === "w") {
+          console.log(car.driveAroundWorld());
+          console.log(displayCar());
+        }
+
+        if (userKey === "t") {
+          console.log(car.getTuneUp());
+          console.log(displayCar());
+        }
+      }
+
+    </script>
+  </body>
+</html>
