@@ -79,7 +79,7 @@
 
 
       document.onkeyup = function(event) {
-        var userKey = event.key;
+        var userKey = event.key.toLowerCase();
 
         if (userKey === "h") {
           car.honk();
