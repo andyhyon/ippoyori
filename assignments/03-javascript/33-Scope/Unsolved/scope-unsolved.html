@@ -41,14 +41,16 @@
     // BONUS: Do this without a variable assignment.
 
     // CHALLENGE: Write a function that takes a string argument, and prints it.
-    function report(message) {
-      return message
+    function report(string) {
+      console.log(name + " likes " + string + ".");
     }
 
-    console.log(report(languages));
+
     // Next, research forEach, and use the report function
     // to print the values in the languages array defined
     // above.
+    languages.forEach(report);
+
     // ???
     </script>
 
