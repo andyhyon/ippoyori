@@ -8,8 +8,8 @@
   <body>
 
     <h1>DC Question Game</h1>
-    <h3 id="game-instruction"></div>
-    <div id="game-score"></div>
+    <h3 id="game-instruction">Type "t" for true and "f" for false</h3>
+    <div id="game-score">Score: 0</div>
     <div id="game-question"></div>
 
 
@@ -68,7 +68,7 @@
         }
         // When there are no more questions, display "Game Over!"
         else {
-          gameQuestionElement.textContent = "All things must come to an end."
+          gameQuestionElement.textContent = "Thanks for playing!"
         }
       }
 
@@ -81,18 +81,19 @@
 
         if (userAnswer === "t" || userAnswer == "f") {
           if (userAnswer == gameAnswer) {
-            alert("1 point for Hufflepuff!");
+            gameInstructionElement.textContent = "1 point for Hufflepuff!";
             userScore++;
           }
           else {
-            alert("You filthy muggle!");
+            gameInstructionElement.textContent = "You filthy muggle!";
           }
         }
         else {
-          alert("You had one job...");
+          gameInstructionElement.textContent = "You had one job...";
         }
 
         presentQuestion();
+        gameScoreElement.textContent = "Your score: " + userScore;
       }
 
     </script>
