@@ -8,8 +8,8 @@
   <body>
 
     <h1>DC Question Game</h1>
-    <div id="score"></div>
-    <div id="gameQuestion"></div>
+    <div id="game-score"></div>
+    <div id="game-question"></div>
 
 
     <script type="text/JavaScript">
@@ -26,6 +26,80 @@
         q9: ["Damian does not have daddy issues", "f"],
         q10: ["Teen Titans GO is good continuation of the original series", "f"]
       }
+
+      // var gameQuestionElement = document.getElementById("game-question");
+
+      gameObjectKeysArray = Object.keys(gameObject);
+
+      
+      var presentQuestion () {
+
+      }
+
+      // var ttt = gameObjectKeys[0];
+      // console.log(ttt);
+      // console.log(gameObject[ttt][0]);
+      // console.log(gameObject.q1);
+      // console.log(gameObjectKeys);
+
+      // for (i = 0; i < gameObjectKeysArray.length; i++) {
+      //   var gameObjectKey = gameObjectKeysArray[i];
+      //   var gameQuestion = gameObject[gameObjectKey][0];
+      //   var gameAnswer = gameObject[gameObjectKey][1];
+      //
+      //   gameQuestionElement.textContent = gameQuestion;
+      //
+      //   document.onkeyup = function(event) {
+      //     var userAnswer = event.key.toLowerCase();
+      //
+      //     if (userAnswer === "t" || userAnswer == "f") {
+      //       if (userAnswer == gameAnswer) {
+      //         // alert("1 point for Hufflepuff!");
+      //       }
+      //       else {
+      //         // alert("You filthy muggle!");
+      //       }
+      //     }
+      //     else {
+      //       // alert("You had one job...");
+      //     }
+      //   }
+      //
+      //   // console.log(gameObject[ttt][0]);
+      //   // console.log(gameQuestion);
+      //
+      // }
+
+      // for (i in gameObject) {
+        // var gameQuestion = gameObject[i][0];
+        // var gameAnswer = gameObject[i][1];
+        // gameQuestionElement.textContent = gameQuestion;
+
+        // console.log(gameQuestion);
+        // console.log(i);
+
+        // document.onkeyup = function(event) {
+        //   var userAnswer = event.key.toLowerCase();
+        //
+        //   if (userAnswer === "t" || userAnswer == "f") {
+        //     if (userAnswer == gameAnswer) {
+        //       alert("1 point for Hufflepuff!");
+        //     }
+        //     else {
+        //       alert("You filthy muggle!");
+        //     }
+        //   }
+        //   else {
+        //     alert("You had one job...");
+        //   }
+        // }
+      // }
+
+      // Object.keys(gameObject).forEach(function(key) {
+      //   gameQuestionElement.textContent = gameObject[key][0];
+      //
+      //   // console.log(gameObject[key][0]);
+      // });
 
     </script>
   </body>
