@@ -87,13 +87,15 @@
           else {
             gameInstructionElement.textContent = "You filthy muggle!";
           }
+          presentQuestion();
+          gameScoreElement.textContent = "Your score: " + userScore;
+        }
+        else if (userAnswer === "k") {
+          gameInstructionElement.textContent = "Come on Ken...";
         }
         else {
           gameInstructionElement.textContent = "You had one job...";
         }
-
-        presentQuestion();
-        gameScoreElement.textContent = "Your score: " + userScore;
       }
 
     </script>
