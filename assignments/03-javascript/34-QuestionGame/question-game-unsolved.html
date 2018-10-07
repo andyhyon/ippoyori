@@ -8,6 +8,7 @@
   <body>
 
     <h1>DC Question Game</h1>
+    <h3 id="game-instruction"></div>
     <div id="game-score"></div>
     <div id="game-question"></div>
 
@@ -27,79 +28,72 @@
         q10: ["Teen Titans GO is good continuation of the original series", "f"]
       }
 
-      // var gameQuestionElement = document.getElementById("game-question");
+      var gameQuestionElement = document.getElementById("game-question");
+      var gameInstructionElement = document.getElementById("game-instruction");
+      var gameScoreElement = document.getElementById("game-score");
 
-      gameObjectKeysArray = Object.keys(gameObject);
+      // Array containing keys of gameObject (e.g. q1, q2...q10)
+      gameKeyArray = Object.keys(gameObject);
 
-      
-      var presentQuestion () {
+      // Variable that becomes the index for gameKeyArray
+      var gameKeyIndex = 0
 
+      // Variables used inside function presentQuestion but declared outside as it's called to
+      var gameKey;
+      var gameQuestion;
+      var gameAnswer;
+
+      // Variables keep track of user score
+      var userScore = 0;
+
+      // Function to present one question at a time on the screen
+      function presentQuestion () {
+
+        // Conditional to determine if the game continues or stops based on the current key index
+        if (gameKeyIndex < gameKeyArray.length ) {
+
+          // Grabs keys (questions) from the array (list of question numbers)
+          gameKey = gameKeyArray[gameKeyIndex];
+
+          // Grabs the values (question and answer) from the array (list of question numbers)
+          gameQuestion = gameObject[gameKey][0];
+          gameAnswer = gameObject[gameKey][1];
+
+
+          // Property to replace the contents of the div with the game's questions
+          gameQuestionElement.textContent = gameQuestion;
+
+          // At the end of this function, the index for the array containing the keys for gameObject will increase to move onto the next question
+          gameKeyIndex++;
+        }
+        // When there are no more questions, display "Game Over!"
+        else {
+          gameQuestionElement.textContent = "All things must come to an end."
+        }
       }
 
-      // var ttt = gameObjectKeys[0];
-      // console.log(ttt);
-      // console.log(gameObject[ttt][0]);
-      // console.log(gameObject.q1);
-      // console.log(gameObjectKeys);
+      // Calls the function above to present the first question
+      presentQuestion();
 
-      // for (i = 0; i < gameObjectKeysArray.length; i++) {
-      //   var gameObjectKey = gameObjectKeysArray[i];
-      //   var gameQuestion = gameObject[gameObjectKey][0];
-      //   var gameAnswer = gameObject[gameObjectKey][1];
-      //
-      //   gameQuestionElement.textContent = gameQuestion;
-      //
-      //   document.onkeyup = function(event) {
-      //     var userAnswer = event.key.toLowerCase();
-      //
-      //     if (userAnswer === "t" || userAnswer == "f") {
-      //       if (userAnswer == gameAnswer) {
-      //         // alert("1 point for Hufflepuff!");
-      //       }
-      //       else {
-      //         // alert("You filthy muggle!");
-      //       }
-      //     }
-      //     else {
-      //       // alert("You had one job...");
-      //     }
-      //   }
-      //
-      //   // console.log(gameObject[ttt][0]);
-      //   // console.log(gameQuestion);
-      //
-      // }
+      // Function to test the users' answer against the game's answer
+      document.onkeyup = function(event) {
+        var userAnswer = event.key.toLowerCase();
 
-      // for (i in gameObject) {
-        // var gameQuestion = gameObject[i][0];
-        // var gameAnswer = gameObject[i][1];
-        // gameQuestionElement.textContent = gameQuestion;
+        if (userAnswer === "t" || userAnswer == "f") {
+          if (userAnswer == gameAnswer) {
+            alert("1 point for Hufflepuff!");
+            userScore++;
+          }
+          else {
+            alert("You filthy muggle!");
+          }
+        }
+        else {
+          alert("You had one job...");
+        }
 
-        // console.log(gameQuestion);
-        // console.log(i);
-
-        // document.onkeyup = function(event) {
-        //   var userAnswer = event.key.toLowerCase();
-        //
-        //   if (userAnswer === "t" || userAnswer == "f") {
-        //     if (userAnswer == gameAnswer) {
-        //       alert("1 point for Hufflepuff!");
-        //     }
-        //     else {
-        //       alert("You filthy muggle!");
-        //     }
-        //   }
-        //   else {
-        //     alert("You had one job...");
-        //   }
-        // }
-      // }
-
-      // Object.keys(gameObject).forEach(function(key) {
-      //   gameQuestionElement.textContent = gameObject[key][0];
-      //
-      //   // console.log(gameObject[key][0]);
-      // });
+        presentQuestion();
+      }
 
     </script>
   </body>
