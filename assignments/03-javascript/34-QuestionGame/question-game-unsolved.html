@@ -12,6 +12,9 @@
     <div id="game-score">Score: 0</div>
     <div id="game-question"></div>
 
+    <!-- <button onClick="choose("t")">True</button>
+    <button onClick="choose("f")">False</button> -->
+
 
     <script type="text/JavaScript">
 
@@ -25,7 +28,7 @@
         q7: ["Guy Gardner is the best Green Lantern", "f"],
         q8: ["Robins often die", "t"],
         q9: ["Damian does not have daddy issues", "f"],
-        q10: ["Teen Titans GO is good continuation of the original series", "f"]
+        q10: ["Teen Titans GO is a good continuation of the original series", "f"]
       }
 
       var gameQuestionElement = document.getElementById("game-question");
@@ -64,7 +67,7 @@
           gameQuestionElement.textContent = gameQuestion;
 
           // At the end of this function, the index for the array containing the keys for gameObject will increase to move onto the next question
-          gameKeyIndex++;
+          // gameKeyIndex++;
         }
         // When there are no more questions, display "Game Over!"
         else {
@@ -79,7 +82,7 @@
       document.onkeyup = function(event) {
         var userAnswer = event.key.toLowerCase();
 
-        if (userAnswer === "t" || userAnswer == "f") {
+        if ((userAnswer === "t" || userAnswer == "f") && (gameKeyIndex < gameKeyArray.length)) {
           if (userAnswer == gameAnswer) {
             gameInstructionElement.textContent = "1 point for Hufflepuff!";
             userScore++;
@@ -87,15 +90,19 @@
           else {
             gameInstructionElement.textContent = "You filthy muggle!";
           }
-          presentQuestion();
           gameScoreElement.textContent = "Your score: " + userScore;
+          gameKeyIndex++;
+          console.log(gameKeyIndex);
+          presentQuestion();
         }
         else if (userAnswer === "k") {
           gameInstructionElement.textContent = "Come on Ken...";
         }
         else {
-          gameInstructionElement.textContent = "You had one job...";
+          return;
+          // gameInstructionElement.textContent = "You had one job...";
         }
+
       }
 
     </script>
